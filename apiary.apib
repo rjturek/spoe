@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# SPOE
+You know, SPOE.
+
+# Group Plans
+These are some group plans for **SPOE API**
+
+## SPOE Collection [/plans]
+### List all Plans [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "Mom and Pop's"
+        }, {
+          "id": 2, "name": "Bangers Fudiggly"
+        }]
+
+### Create a Note [POST]
++ Request (application/json)
+
+        { "name": "Oregon Bagles" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "name": "Oregon Bagels" }
+
+## Plan [/plans/{id}]
+A single Plan object with its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Plan to perform action with. Has example value.
+
+### Retrieve a Plan [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-Ugga-Header: The Value
+
+    + Body
+
+            { "id": 3, "name": "Oregon Bagels" }
+
+### Remove a Note [DELETE]
++ Response 204
